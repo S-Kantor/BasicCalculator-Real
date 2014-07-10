@@ -63,14 +63,14 @@ public class Main extends Activity {
 
     public void Equals (View view) {
 
-        TextView equals = (TextView)findViewById(R.id.equals);
+        TextView equals = (TextView)findViewById(R.id.textView2);
         if (wasAddClicked) {
 
             int number = Integer.valueOf(str);
             int number2 = Integer.valueOf(str2);
             int equals2 = number + number2;
 
-            equals.setText(Integer.toString(equals2));
+            equals.setText("It equals: " + Integer.toString(equals2));
         }
     }
 
