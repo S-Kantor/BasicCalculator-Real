@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">Calculator</string>
+    <string name="Header">First try at a calculator!</string>
     <string name="action_settings">Settings</string>
     <string name="Output">Button Selected</string>
     <string name="Equals1">=</string>

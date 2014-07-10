@@ -1,7 +1,6 @@
 package com.kantor.sam.basiccalculator;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,8 +8,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
-
+import android.widget.Button;
+import android.widget.TextView;
 
 
 public class Main extends Activity {
@@ -26,6 +25,54 @@ public class Main extends Activity {
         }
     }
 
+    public static String str = "";
+    public static String str2 = "";
+
+    public boolean wasAddClicked = false;
+    public boolean wasOpClicked = false;
+
+
+    public void numberClicked (View view) {
+
+        Button button = (Button)view;
+        String newstr = button.getText().toString();
+        TextView textView = (TextView)findViewById(R.id.container1); //finding the specific Textview
+
+        if (!(wasOpClicked) ) {
+
+            str = str + newstr;
+            textView.setText(str);
+        }
+        else {
+
+            str2 = str2 + newstr;
+            textView.setText(str2);
+        }
+    }
+
+    public void Add (View view) {
+
+        //Button button = (Button)view;
+        //String newstr1 = button.getText().toString();
+        //TextView operationClick = (TextView)findViewById(R.id.OperationSelected);
+        // str = newstr1;
+        wasOpClicked = true;
+        wasAddClicked = true;
+
+    }
+
+    public void Equals (View view) {
+
+        TextView equals = (TextView)findViewById(R.id.equals);
+        if (wasAddClicked) {
+
+            int number = Integer.valueOf(str);
+            int number2 = Integer.valueOf(str2);
+            int equals2 = number + number2;
+
+            equals.setText(Integer.toString(equals2));
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

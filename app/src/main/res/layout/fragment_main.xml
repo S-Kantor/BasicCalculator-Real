@@ -34,7 +34,8 @@
         android:layout_marginTop="72dp"
         android:layout_below="@+id/HeaderText"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="numberClicked"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -42,7 +43,8 @@
         android:text="2"
         android:id="@+id/num2"
         android:layout_alignBottom="@+id/num1"
-        android:layout_toRightOf="@+id/num1" />
+        android:layout_toRightOf="@+id/num1"
+        android:onClick="numberClicked"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -50,7 +52,8 @@
         android:text="3"
         android:id="@+id/num3"
         android:layout_alignTop="@+id/num2"
-        android:layout_toRightOf="@+id/num2" />
+        android:layout_toRightOf="@+id/num2"
+        android:onClick="numberClicked"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -58,7 +61,8 @@
         android:text="4"
         android:id="@+id/num4"
         android:layout_alignBottom="@+id/num3"
-        android:layout_toRightOf="@+id/num3" />
+        android:layout_toRightOf="@+id/num3"
+        android:onClick="numberClicked"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -66,13 +70,15 @@
         android:text="5"
         android:id="@+id/button5"
         android:layout_alignBottom="@+id/num4"
-        android:layout_toRightOf="@+id/num4"/>
+        android:layout_toRightOf="@+id/num4"
+        android:onClick="numberClicked"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="+"
         android:id="@+id/add"
+        android:onClick="Add"
         android:layout_below="@+id/num1"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -92,7 +98,8 @@
         android:text="="
         android:id="@+id/equals"
         android:layout_alignBottom="@+id/minus"
-        android:layout_toRightOf="@+id/minus" />
+        android:layout_toRightOf="@+id/minus"
+        android:onClick="Equals"/>
 
     <TextView
         android:id="@+id/textView2"
@@ -115,5 +122,4 @@
         android:layout_below="@+id/textView2"
         android:layout_toRightOf="@+id/add"
         android:textAlignment="center" />
-
 </RelativeLayout>
