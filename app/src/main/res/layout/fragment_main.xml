@@ -9,8 +9,111 @@
     tools:context=".Main$PlaceholderFragment">
 
     <TextView
-        android:text="@string/hello_world"
+        android:text="@string/Header"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:id="@+id/HeaderText" />
+
+    <TextView
+        android:id="@+id/container1"
+        android:text="@string/Output"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="141dp"
+        android:textAlignment="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:id="@+id/num1"
+        android:layout_marginTop="72dp"
+        android:layout_below="@+id/HeaderText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:id="@+id/num2"
+        android:layout_alignBottom="@+id/num1"
+        android:layout_toRightOf="@+id/num1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:id="@+id/num3"
+        android:layout_alignTop="@+id/num2"
+        android:layout_toRightOf="@+id/num2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:id="@+id/num4"
+        android:layout_alignBottom="@+id/num3"
+        android:layout_toRightOf="@+id/num3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:id="@+id/button5"
+        android:layout_alignBottom="@+id/num4"
+        android:layout_toRightOf="@+id/num4"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        android:id="@+id/add"
+        android:layout_below="@+id/num1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        android:id="@+id/minus"
+        android:layout_alignTop="@+id/add"
+        android:layout_toRightOf="@+id/add" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="="
+        android:id="@+id/equals"
+        android:layout_alignBottom="@+id/minus"
+        android:layout_toRightOf="@+id/minus" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:text="@string/Equals1"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/container1"
+        android:layout_toRightOf="@+id/minus"
+        android:layout_marginTop="32dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Operation Selected"
+        android:id="@+id/OperationSelected"
+        android:textSize="25sp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/textView2"
+        android:layout_toRightOf="@+id/add"
+        android:textAlignment="center" />
 
 </RelativeLayout>
