@@ -122,4 +122,24 @@
         android:layout_below="@+id/textView2"
         android:layout_toRightOf="@+id/add"
         android:textAlignment="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service Start"
+        android:id="@+id/Service1"
+        android:layout_alignTop="@+id/equals"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="ServiceStart" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service End"
+        android:id="@+id/Service2"
+        android:layout_below="@+id/Service1"
+        android:layout_alignLeft="@+id/Service1"
+        android:layout_alignStart="@+id/Service1"
+        android:onClick="ServiceEnd" />
 </RelativeLayout>

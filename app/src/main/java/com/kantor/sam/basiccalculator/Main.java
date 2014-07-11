@@ -2,7 +2,9 @@ package com.kantor.sam.basiccalculator;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -72,6 +74,20 @@ public class Main extends Activity {
 
             equals.setText("It equals: " + Integer.toString(equals2));
         }
+    }
+
+    public void ServiceStart (View view) {
+
+        //start the service from here //MyService is your service class name
+        startService(new Intent(this, MyService.class));
+        Log.d("Activity", "Start");
+    }
+
+    public void ServiceEnd(View view) {
+
+        //Stop the running service from here//MyService is your service class name
+        //Service will only stop if it is already running.
+        stopService(new Intent(this, MyService.class));
     }
 
     @Override
