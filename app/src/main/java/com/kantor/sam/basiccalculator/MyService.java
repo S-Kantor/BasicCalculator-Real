@@ -6,6 +6,8 @@ import android.os.IBinder;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.Timer;
+
 public class MyService extends Service {
 
     @Override
@@ -22,6 +24,7 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Toast.makeText(this, "My Service Started", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "HelloDOOFUS", Toast.LENGTH_LONG).show();
         Log.d("Service", "Start" );
         //Note: You can start a new thread and use it for long background processing from here.
 

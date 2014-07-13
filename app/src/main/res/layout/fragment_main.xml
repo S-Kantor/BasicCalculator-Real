@@ -31,47 +31,48 @@
         android:layout_height="wrap_content"
         android:text="1"
         android:id="@+id/num1"
-        android:layout_marginTop="72dp"
-        android:layout_below="@+id/HeaderText"
+        android:onClick="numberClicked"
+        android:layout_above="@+id/container1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="numberClicked"/>
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2"
         android:id="@+id/num2"
-        android:layout_alignBottom="@+id/num1"
-        android:layout_toRightOf="@+id/num1"
-        android:onClick="numberClicked"/>
+        android:onClick="numberClicked"
+        android:layout_above="@+id/num0"
+        android:layout_toRightOf="@+id/num1" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="3"
         android:id="@+id/num3"
-        android:layout_alignTop="@+id/num2"
-        android:layout_toRightOf="@+id/num2"
-        android:onClick="numberClicked"/>
+        android:onClick="numberClicked"
+        android:layout_above="@+id/container1"
+        android:layout_toRightOf="@+id/num2" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="4"
         android:id="@+id/num4"
-        android:layout_alignBottom="@+id/num3"
-        android:layout_toRightOf="@+id/num3"
-        android:onClick="numberClicked"/>
+        android:onClick="numberClicked"
+        android:layout_above="@+id/num1"
+        android:layout_alignLeft="@+id/num1"
+        android:layout_alignStart="@+id/num1" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5"
         android:id="@+id/button5"
-        android:layout_alignBottom="@+id/num4"
-        android:layout_toRightOf="@+id/num4"
-        android:onClick="numberClicked"/>
+        android:onClick="numberClicked"
+        android:layout_above="@+id/num2"
+        android:layout_alignLeft="@+id/num2"
+        android:layout_alignStart="@+id/num2" />
 
     <Button
         android:layout_width="wrap_content"
@@ -79,27 +80,35 @@
         android:text="+"
         android:id="@+id/add"
         android:onClick="Add"
-        android:layout_below="@+id/num1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="39dp" />
+        android:layout_above="@+id/minus"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/num9"
+        android:layout_toRightOf="@+id/container1" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="-"
         android:id="@+id/minus"
-        android:layout_alignTop="@+id/add"
-        android:layout_toRightOf="@+id/add" />
+        android:layout_above="@+id/container1"
+        android:layout_alignRight="@+id/OperationSelected"
+        android:layout_alignEnd="@+id/OperationSelected"
+        android:layout_below="@+id/num6"
+        android:layout_toRightOf="@+id/container1" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="="
         android:id="@+id/equals"
-        android:layout_alignBottom="@+id/minus"
-        android:layout_toRightOf="@+id/minus"
-        android:onClick="Equals"/>
+        android:onClick="Equals"
+        android:layout_below="@+id/num3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/minus"
+        android:layout_alignStart="@+id/minus" />
 
     <TextView
         android:id="@+id/textView2"
@@ -121,25 +130,101 @@
         android:layout_marginTop="30dp"
         android:layout_below="@+id/textView2"
         android:layout_toRightOf="@+id/add"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:visibility="invisible"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Service Start"
         android:id="@+id/Service1"
-        android:layout_alignTop="@+id/equals"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:onClick="ServiceStart" />
+        android:onClick="ServiceStart"
+        android:visibility="visible"
+        android:layout_below="@+id/HeaderText"
+        android:layout_toRightOf="@+id/num0"
+        android:layout_marginTop="70dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Service End"
         android:id="@+id/Service2"
-        android:layout_below="@+id/Service1"
-        android:layout_alignLeft="@+id/Service1"
-        android:layout_alignStart="@+id/Service1"
-        android:onClick="ServiceEnd" />
+        android:onClick="ServiceEnd"
+        android:visibility="visible"
+        android:layout_alignTop="@+id/Service1"
+        android:layout_toLeftOf="@+id/Service1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/num0"
+        android:onClick="numberClicked"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/container1"
+        android:layout_alignEnd="@+id/container1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6"
+        android:id="@+id/num6"
+        android:onClick="numberClicked"
+        android:layout_above="@+id/num3"
+        android:layout_alignLeft="@+id/num3"
+        android:layout_alignStart="@+id/num3"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="7"
+        android:id="@+id/num7"
+        android:onClick="numberClicked"
+        android:layout_above="@+id/num4"
+        android:layout_alignLeft="@+id/num4"
+        android:layout_alignStart="@+id/num4" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8"
+        android:id="@+id/num8"
+        android:onClick="numberClicked"
+        android:layout_alignTop="@+id/num7"
+        android:layout_alignLeft="@+id/button5"
+        android:layout_alignStart="@+id/button5" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:id="@+id/num9"
+        android:onClick="numberClicked"
+        android:layout_alignTop="@+id/num8"
+        android:layout_alignLeft="@+id/num6"
+        android:layout_alignStart="@+id/num6" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:id="@+id/multiply"
+        android:onClick="Add"
+        android:layout_alignTop="@+id/num9"
+        android:layout_toRightOf="@+id/container1"
+        android:layout_alignRight="@+id/add"
+        android:layout_alignEnd="@+id/add" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:id="@+id/divide"
+        android:onClick="Add"
+        android:layout_above="@+id/num9"
+        android:layout_alignRight="@+id/multiply"
+        android:layout_alignEnd="@+id/multiply"
+        android:layout_toRightOf="@+id/Service2" />
 </RelativeLayout>
