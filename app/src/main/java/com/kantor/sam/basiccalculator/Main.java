@@ -31,6 +31,9 @@ public class Main extends Activity {
     public static String str2 = "";
 
     public boolean wasAddClicked = false;
+    public boolean wasMultClicked = false;
+    public boolean wasDivClicked = false;
+    public boolean wasSubClicked = false;
     public boolean wasOpClicked = false;
     public boolean wasEqualsClicked = false;
 
@@ -65,19 +68,44 @@ public class Main extends Activity {
 
     }
 
+    public void Multiply (View view) {
+        wasOpClicked = true;
+        wasMultClicked = true;
+    }
+
+    public void Substract (View view) {
+        wasOpClicked = true;
+        wasSubClicked = true;
+    }
+
+    public void Divide (View view) {
+        wasOpClicked = true;
+        wasDivClicked = true;
+    }
+
     public void Equals (View view) {
 
         TextView equals = (TextView)findViewById(R.id.textView2);
+        int number = Integer.valueOf(str);
+        int number2 = Integer.valueOf(str2);
         if (wasAddClicked) {
-
-            int number = Integer.valueOf(str);
-            int number2 = Integer.valueOf(str2);
             int equals2 = number + number2;
-
             equals.setText("It equals: " + Integer.toString(equals2));
-            wasEqualsClicked = true;
-            Clear(view);
         }
+        if (wasSubClicked) {
+            int equals2 = number - number2;
+            equals.setText("It equals: " + Integer.toString(equals2));
+        }
+        if (wasMultClicked) {
+            int equals2 = number * number2;
+            equals.setText("It equals: " + Integer.toString(equals2));
+        }
+        if (wasDivClicked) {
+            int equals2 = number / number2;
+            equals.setText("It equals: " + Integer.toString(equals2));
+        }
+        wasEqualsClicked = true;
+        Clear(view);
     }
 
     public void Clear (View view) {

@@ -124,7 +124,8 @@
         android:layout_toRightOf="@+id/num9"
         android:layout_below="@+id/Service1"
         android:layout_alignRight="@+id/Clear"
-        android:layout_alignEnd="@+id/Clear" />
+        android:layout_alignEnd="@+id/Clear"
+        android:onClick="Substract" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -219,17 +220,17 @@
         android:layout_height="wrap_content"
         android:text="X"
         android:id="@+id/multiply"
-        android:onClick="Add"
+        android:onClick="Multiply"
         android:layout_below="@+id/divide"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="/"
         android:id="@+id/divide"
-        android:onClick="Add"
+        android:onClick="Divide"
         android:layout_above="@+id/num9"
         android:layout_alignRight="@+id/multiply"
         android:layout_alignEnd="@+id/multiply"
