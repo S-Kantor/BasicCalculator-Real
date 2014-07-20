@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Main extends Activity {
@@ -36,6 +37,7 @@ public class Main extends Activity {
     public boolean wasSubClicked = false;
     public boolean wasOpClicked = false;
     public boolean wasEqualsClicked = false;
+    public boolean wasNumClicked = false;
 
 
     public void numberClicked (View view) {
@@ -44,6 +46,7 @@ public class Main extends Activity {
         String newstr = button.getText().toString();
         TextView textView = (TextView)findViewById(R.id.container1); //finding the specific Textview
         wasEqualsClicked = false;
+        wasNumClicked = true;
 
         if (!(wasOpClicked) ) {
 
@@ -65,46 +68,88 @@ public class Main extends Activity {
         // str = newstr1;
         wasOpClicked = true;
         wasAddClicked = true;
-
+        if (wasNumClicked) {
+            wasNumClicked = false;
+        }
+        else {
+            Toast.makeText(this, "First a number then press the operation :P", Toast.LENGTH_SHORT).show();        }
     }
 
     public void Multiply (View view) {
         wasOpClicked = true;
         wasMultClicked = true;
+        if (wasNumClicked) {
+            wasNumClicked = false;
+        }
+        else {
+            Toast.makeText(this, "First a number then press the operation :P", Toast.LENGTH_SHORT).show();        }
     }
 
     public void Substract (View view) {
         wasOpClicked = true;
         wasSubClicked = true;
+        if (wasNumClicked) {
+            wasNumClicked = false;
+        }
+        else {
+            Toast.makeText(this, "First a number then press the operation :P", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void Divide (View view) {
         wasOpClicked = true;
         wasDivClicked = true;
+        if (wasNumClicked) {
+            wasNumClicked = false;
+        }
+        else {
+            Toast.makeText(this, "First a number then press the operation :P", Toast.LENGTH_SHORT).show();        }
     }
 
     public void Equals (View view) {
+        int number = 0;
+        int number2 = 0;
+        int equals2 = 0;
+        TextView equals = (TextView) findViewById(R.id.textView2);
+        try {
+            number = Integer.parseInt(str);
+            number2 = Integer.parseInt(str2);
+        }
+        catch(Exception e) {
 
-        TextView equals = (TextView)findViewById(R.id.textView2);
-        int number = Integer.valueOf(str);
-        int number2 = Integer.valueOf(str2);
+            equals.setText("Input an integer / number");
+
+        }
+
         if (wasAddClicked) {
-            int equals2 = number + number2;
+            equals2 = number + number2;
             equals.setText("It equals: " + Integer.toString(equals2));
+            wasAddClicked = false;
         }
         if (wasSubClicked) {
-            int equals2 = number - number2;
+            equals2 = number - number2;
             equals.setText("It equals: " + Integer.toString(equals2));
+            wasSubClicked = false;
         }
         if (wasMultClicked) {
-            int equals2 = number * number2;
+            equals2 = number * number2;
             equals.setText("It equals: " + Integer.toString(equals2));
+            wasMultClicked = false;
         }
         if (wasDivClicked) {
-            int equals2 = number / number2;
+            try {
+                equals2 = number / number2;
+            }
+            catch (Exception e) {
+                Toast.makeText(this, "You Can't Divide by 0", Toast.LENGTH_LONG).show();
+                Clear(view);
+                return;
+            }
             equals.setText("It equals: " + Integer.toString(equals2));
+            wasDivClicked= false;
         }
         wasEqualsClicked = true;
+        wasNumClicked = false;
         Clear(view);
     }
 
@@ -115,11 +160,11 @@ public class Main extends Activity {
         wasOpClicked = false;
         TextView temp = (TextView) findViewById(R.id.container1);
         temp.setText("");
-        if (!(wasEqualsClicked)) {
-            TextView temp1 = (TextView) findViewById(R.id.textView2);
-            temp1.setText("");
+        //if (!(wasEqualsClicked)) {
+            //TextView temp1 = (TextView) findViewById(R.id.textView2);
+            //temp1.setText("");
             wasEqualsClicked = false;
-        }
+        //}
     }
 
     public void ServiceStart (View view) {
