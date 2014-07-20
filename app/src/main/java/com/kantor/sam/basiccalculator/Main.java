@@ -73,6 +73,10 @@ public class Main extends Activity {
             int equals2 = number + number2;
 
             equals.setText("It equals: " + Integer.toString(equals2));
+            str = "";
+            str2 = "";
+            wasAddClicked = false;
+            wasOpClicked = false;
         }
     }
 
