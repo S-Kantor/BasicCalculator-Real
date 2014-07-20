@@ -122,8 +122,9 @@
         android:layout_toEndOf="@+id/num9"
         android:layout_alignBottom="@+id/OperationSelected"
         android:layout_toRightOf="@+id/num9"
-        android:layout_alignRight="@+id/HeaderText"
-        android:layout_alignEnd="@+id/HeaderText" />
+        android:layout_below="@+id/Service1"
+        android:layout_alignRight="@+id/Clear"
+        android:layout_alignEnd="@+id/Clear" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -234,4 +235,14 @@
         android:layout_alignEnd="@+id/multiply"
         android:layout_alignLeft="@+id/multiply"
         android:layout_alignStart="@+id/multiply" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:id="@+id/Clear"
+        android:layout_above="@+id/container1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="Clear" />
 </RelativeLayout>

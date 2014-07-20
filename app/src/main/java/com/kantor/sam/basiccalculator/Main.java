@@ -32,6 +32,7 @@ public class Main extends Activity {
 
     public boolean wasAddClicked = false;
     public boolean wasOpClicked = false;
+    public boolean wasEqualsClicked = false;
 
 
     public void numberClicked (View view) {
@@ -39,6 +40,7 @@ public class Main extends Activity {
         Button button = (Button)view;
         String newstr = button.getText().toString();
         TextView textView = (TextView)findViewById(R.id.container1); //finding the specific Textview
+        wasEqualsClicked = false;
 
         if (!(wasOpClicked) ) {
 
@@ -73,10 +75,22 @@ public class Main extends Activity {
             int equals2 = number + number2;
 
             equals.setText("It equals: " + Integer.toString(equals2));
-            str = "";
-            str2 = "";
-            wasAddClicked = false;
-            wasOpClicked = false;
+            wasEqualsClicked = true;
+            Clear(view);
+        }
+    }
+
+    public void Clear (View view) {
+        str = "";
+        str2 = "";
+        wasAddClicked = false;
+        wasOpClicked = false;
+        TextView temp = (TextView) findViewById(R.id.container1);
+        temp.setText("");
+        if (!(wasEqualsClicked)) {
+            TextView temp1 = (TextView) findViewById(R.id.textView2);
+            temp1.setText("");
+            wasEqualsClicked = false;
         }
     }
 
